@@ -22,6 +22,7 @@ foreach ($stmt as $row) {
         }
         else {
             setcookie("pass_prepod", $row[pass], time() + 3600, "/");
+            header("location: ../role/prepod/prepod.php");
         }
     } else {
         echo 'Пароль неправильный.';
