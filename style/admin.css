@@ -1,0 +1,13 @@
+.div_glaw_admin {
+    width: 100%;
+    height: 800px;
+    position: absolute;
+}
+
+.div_min_admin {
+    width: 90%;
+    height: 720px;
+    margin: auto;
+    margin-top: 40px;
+    background-color: red;
+}

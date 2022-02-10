@@ -20,5 +20,11 @@
 </head>
 <body>
 
+<div class="div_glaw_admin">
+    <div class="div_min_admin">
+        
+    </div>
+</div>
+
 </body>
 </html>
