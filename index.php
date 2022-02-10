@@ -18,8 +18,7 @@
                 </div>
 
                 <div class="div_vxod">
-                    <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn btn-dark button_vxod">Prepod</button>
-                    <button class="btn btn-dark button_vxod">Admin</button>
+                    <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn btn-dark button_vxod">Войти</button>
                 </div>
             </div>
 

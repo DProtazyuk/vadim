@@ -1,7 +1,7 @@
 <?php
 
     if(!isset($_COOKIE['pass_admin'])) {
-        echo "no";
+        header("location: ../../index.php");
     }
     else {
         echo "yes";
