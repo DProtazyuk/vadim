@@ -17,10 +17,11 @@ $stmt->execute([ $login]);
 foreach ($stmt as $row) {
     if (password_verify($pass, $row[pass])) {
         if($row[role] == 'admin') {
-            setcookie("pass_admin", $row[pass], time() - 3600, "/");
+            setcookie("pass_admin", $row[pass], time() + 3600, "/");
+            header("location: ../role/admin/admin.php");
         }
         else {
-            setcookie("pass_prepod", $row[pass], time() - 3600, "/");
+            setcookie("pass_prepod", $row[pass], time() + 3600, "/");
         }
     } else {
         echo 'Пароль неправильный.';
