@@ -1,8 +1,10 @@
 <?php
 
-if(!isset($_COOKIE['pass_prepod'])) {
+if (!isset($_COOKIE['prepod_pass'])) {
     header("location: ../../index.php");
 }
-else {
-    echo "yes";
-}
+
+$login1 = $_COOKIE['admin_login'];
+$login2 = $_COOKIE['prepod_login'];
+
+

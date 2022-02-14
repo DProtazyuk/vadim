@@ -2,6 +2,7 @@
     width: 100%;
     height: 800px;
     position: absolute;
+    background-color: #b1daea;
 }
 
 .div_min_admin {
@@ -9,5 +10,26 @@
     height: 720px;
     margin: auto;
     margin-top: 40px;
-    background-color: red;
+    background-color: #85c8de;
+}
+
+.header_admin {
+    width: 100%;
+    height: 65px;
+    background-color: #01556a;
+}
+
+.mini_logo {
+    width: 30%;
+    height: 65px;
+    color: white;
+    text-align: center;
+}
+
+h3{
+    font-size: 2.8em;
+}
+
+text {
+    color: red;
 }

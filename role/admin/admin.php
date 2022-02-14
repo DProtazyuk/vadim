@@ -1,8 +1,11 @@
 <?php
 
-    if(!isset($_COOKIE['pass_admin'])) {
+    if(!isset($_COOKIE['admin_pass'])) {
         header("location: ../../index.php");
     }
+
+    $login1 = $_COOKIE['admin_login'];
+    $login2 = $_COOKIE['prepod_login'];
 
 ?>
 
@@ -22,7 +25,11 @@
 
 <div class="div_glaw_admin">
     <div class="div_min_admin">
-        
+        <div class="header_admin">
+            <div class="mini_logo">
+                <h3>Login in:<text> <?php echo $login1.$login2;?></text></h3>
+            </div>
+        </div>
     </div>
 </div>
 
