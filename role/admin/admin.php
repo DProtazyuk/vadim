@@ -6,7 +6,7 @@
 
     $login1 = $_COOKIE['admin_login'];
     $login2 = $_COOKIE['prepod_login'];
-
+    include ("../../script/connect.php");
 ?>
 
 
@@ -28,6 +28,29 @@
         <div class="header_admin">
             <div class="mini_logo">
                 <h3>Login in:<text> <?php echo $login1.$login2;?></text></h3>
+            </div>
+        </div>
+
+        <div class="action_prepod">
+
+            <div class="to_bd_prepod">
+
+            </div>
+
+            <div class="select_prepod">
+                <?php
+                foreach ($dbh->query("SELECT * FROM users WHERE role = 'prepod'") as $row) {
+                    echo "<div class=select_prepod_glaw> <div class=mini_prepod>
+                    <img src=../../res/prepod_ikon.svg> <h4>Логин: <text>{$row[login]}</text>;  Пароль: <text>{$row[pass]}</text>;</h4>
+                </div>
+                <div class='mini_info'>
+                    <h4>{$row[surname]} {$row[name]} {$row[patronymic]}; Предмет: <text>{$row[predmet]}</text>;</h4>
+                </div>
+                </div>";
+                }
+
+                ?>
+
             </div>
         </div>
     </div>
