@@ -18,10 +18,8 @@ $create_table_users = $link->query("CREATE TABLE `project`.`users` ( `id` INT(10
 $pass_admin =  password_hash('admin', PASSWORD_DEFAULT);
 $pass_prepod =  password_hash('prepod', PASSWORD_DEFAULT);
 
-$stmt = $link->prepare('INSERT INTO `users` (`id`, `login`, `pass`, `surname`, `name`, `patronymic`, `role`, `predmet`) VALUES (NULL, "admin", :admin, NULL , NULL, NULL , "admin", NULL ), (NULL, "prepod", "aaa", "Иванов", "Иван", "Иванович", "prepod", "mat")');
-$stmt->execute(array('admin' => $pass_admin));
+$stmt = $link->prepare('INSERT INTO `users` (`id`, `login`, `pass`, `surname`, `name`, `patronymic`, `role`, `predmet`) VALUES (NULL, "admin", :admin_pass, NULL , NULL, NULL , "admin", NULL ), (NULL, "prepod", :prepod_pass, "Иванов", "Иван", "Иванович", "prepod", "mat")');
+$stmt->execute(array('admin_pass' => $pass_admin, 'prepod_pass' => $pass_prepod));
 
-//$insert_table_users = $link->prepare('INSERT INTO `users` (`id`, `login`, `pass`, `surname`, `name`, `patronymic`, `role`, `predmet`) VALUES (NULL, "admin", "aaaa", NULL , NULL, NULL , "admin", NULL ), (NULL, "prepod", "aaa", "Иванов", "Иван", "Иванович", "prepod", "mat")');
-//$insert_table_users->bindValue(':pass_admin', $pass_admin);
-//$insert_table_users->bindParam(':pass_prepod', $pass_prepod);
+
 echo "Миграции произведены!";
