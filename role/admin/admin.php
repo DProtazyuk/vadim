@@ -34,14 +34,17 @@
         <div class="action_prepod">
 
             <div class="to_bd_prepod">
-
+                <div class="new_prepod">
+                    <h1>New Prepod</h1>
+                    input
+                </div>
             </div>
 
             <div class="select_prepod">
                 <?php
                 foreach ($dbh->query("SELECT * FROM users WHERE role = 'prepod'") as $row) {
                     echo "<div class=select_prepod_glaw> <div class=mini_prepod>
-                    <img src=../../res/prepod_ikon.svg> <h4>Логин: <text>{$row[login]}</text>;  Пароль: <text>{$row[pass]}</text>;</h4>
+                    <img src=../../res/prepod_ikon.svg> <h4>Логин: <text>{$row[login]}</text>;  Пароль: <text>{$row[pass_int]}</text>;</h4>
                 </div>
                 <div class='mini_info'>
                     <h4>{$row[surname]} {$row[name]} {$row[patronymic]}; Предмет: <text>{$row[predmet]}</text>;</h4>
@@ -50,7 +53,6 @@
                 }
 
                 ?>
-
             </div>
         </div>
     </div>

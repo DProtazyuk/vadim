@@ -92,3 +92,11 @@ h4 {
     padding-top: 10px;
     text-align: center;
 }
+
+.new_prepod {
+    margin: auto;
+    width: 350px;
+    height: 400px;
+    border: 1px solid red;
+    text-align: center;
+}
