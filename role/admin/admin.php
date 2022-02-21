@@ -35,8 +35,16 @@
 
             <div class="to_bd_prepod">
                 <div class="new_prepod">
-                    <h1>New Prepod</h1>
-                    input
+                    <h1 style="color: #01556a">New Prepod</h1>
+
+                    <input type="text" placeholder="Введите login" class=" form-control input_prepod">
+                    <input type="text" placeholder="Введите password" class="form-control input_prepod">
+                    <input type="text" placeholder="Введите Фамилию" class="form-control input_prepod">
+                    <input type="text" placeholder="Введите Имя" class="form-control input_prepod">
+                    <input type="text" placeholder="Введите Отчество" class="form-control input_prepod">
+                    <input type="text" placeholder="Введте Предмет" class="form-control input_prepod">
+
+                    <button class="insert_prepod">Создать</button>
                 </div>
             </div>
 
@@ -58,5 +66,7 @@
     </div>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="../../script-js/admin.js"></script>
 </body>
 </html>
