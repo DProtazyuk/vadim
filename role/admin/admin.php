@@ -37,12 +37,12 @@
                 <div class="new_prepod">
                     <h1 style="color: #01556a">New Prepod</h1>
 
-                    <input type="text" placeholder="Введите login" class=" form-control input_prepod">
-                    <input type="text" placeholder="Введите password" class="form-control input_prepod">
-                    <input type="text" placeholder="Введите Фамилию" class="form-control input_prepod">
-                    <input type="text" placeholder="Введите Имя" class="form-control input_prepod">
-                    <input type="text" placeholder="Введите Отчество" class="form-control input_prepod">
-                    <input type="text" placeholder="Введте Предмет" class="form-control input_prepod">
+                    <input id="insert_login_prepod" type="text" placeholder="Введите login" class=" form-control input_prepod">
+                    <input id="insert_pass_prepod" type="text" placeholder="Введите password" class="form-control input_prepod">
+                    <input id="insert_surname_prepod" type="text" placeholder="Введите Фамилию" class="form-control input_prepod">
+                    <input id="insert_name_prepod" type="text" placeholder="Введите Имя" class="form-control input_prepod">
+                    <input id="insert_patronymic_prepod" type="text" placeholder="Введите Отчество" class="form-control input_prepod">
+                    <input id="insert_predmet_prepod" type="text" placeholder="Введте Предмет" class="form-control input_prepod">
 
                     <button class="insert_prepod">Создать</button>
                 </div>
