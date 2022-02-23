@@ -17,7 +17,7 @@ $('.insert_prepod').on('click', function() {
             $(".select_prepod_glaw").load("admin.php .select_prepod_glaw");
 
             // location.href=location.href;
-
+            return;
         }
     });
 });
