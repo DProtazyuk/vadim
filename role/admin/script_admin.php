@@ -11,5 +11,5 @@ $post_prepmet = $_POST['prepmet'];
 
 $pass_prepod =  password_hash($post_pass, PASSWORD_DEFAULT);
 
-$stmt = $dbh->prepare('INSERT INTO `users` (`id`, `login`, `pass`, `pass_int`, `surname`, `name`, `patronymic`, `role`, `predmet`) VALUES (NULL, :login, :prepod_pass, "prepod", "Иванов", "Иван", "Иванович", "prepod", "mat")');
-$stmt->execute(array('login' => $post_login, 'prepod_pass' => $pass_prepod));
+$stmt = $dbh->prepare('INSERT INTO `users` (`id`, `login`, `pass`, `pass_int`, `surname`, `name`, `patronymic`, `role`, `predmet`) VALUES (NULL, :login, :prepod_pass, :pass_z, "Иванов", "Иван", "Иванович", "prepod", "mat")');
+$stmt->execute(array('login' => $post_login, 'prepod_pass' => $pass_prepod, 'pass_z' => $post_pass));
