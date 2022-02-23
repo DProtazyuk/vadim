@@ -108,7 +108,7 @@ h4 {
     margin-top: 15px!important;
 }
 
-.insert_prepod {
+.insert_prepod, .update_prepod_but {
     width: 70%;
     height: 40px;
     background-color: #01556a;
@@ -120,6 +120,6 @@ h4 {
     border-radius: 10px;
 }
 
-.insert_prepod:active {
+.insert_prepod:active, .update_prepod_but:active {
     background-color: red;
 }

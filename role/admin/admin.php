@@ -67,7 +67,7 @@
                     <input id="update_patronymic_prepod" type="text" placeholder="Введите Отчество" class="form-control input_prepod">
                     <input id="update_predmet_prepod" type="text" placeholder="Введте Предмет" class="form-control input_prepod">
 
-                    <button class="insert_prepod">Создать</button>
+                    <button class="update_prepod_but">Изменить</button>
                 </div>
             </div>
 

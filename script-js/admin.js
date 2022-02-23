@@ -16,9 +16,8 @@ $('.insert_prepod').on('click', function() {
             $('.select_prepod_glaw').empty();
             $(".select_prepod_glaw").load("admin.php .select_prepod_glaw");
 
-            location.href=location.href;
+            // location.href=location.href;
 
-            return;
         }
     });
 });
@@ -56,4 +55,9 @@ $('#select_prepod').on('change', function() {
             console.log(wer);
         }
     });
+});
+
+
+$('.update_prepod_but').on('click', function() {
+    alert("sds");
 });
