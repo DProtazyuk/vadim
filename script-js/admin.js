@@ -12,7 +12,7 @@ $('.insert_prepod').on('click', function() {
         url: 'script_admin.php',
         method: 'post',
         dataType: 'html',
-        data: {login: val_login, pass: val_pass, surname: val_surname, name: val_name, patronymic: val_patronymic, prepmet: val_predmet},
+        data: {login: val_login, pass: val_pass, surname: val_surname, name: val_name, patronymic: val_patronymic, predmet: val_predmet},
         success: function(data){
             $( ".select_prepod").append( " <div class=select_prepod_glaw><div class=mini_prepod><img src=../../res/prepod_ikon.svg><h4>Логин: <text>" + val_login + "</text>;  Пароль: <text>"+val_pass+"</text>;</h4></div>" +
                 "<div class='mini_info'><h4>"+val_surname+" "+val_name+" "+val_patronymic+";Предмет: <text>"+val_predmet+"</text>;</h4></div></div>" );
@@ -58,5 +58,23 @@ $('#select_prepod').on('change', function() {
 
 
 $('.update_prepod_but').on('click', function() {
-    alert("sds");
+    var val_up_login =  $('#update_login_prepod').val();
+    var val_up_pass =  $('#update_pass_prepod').val();
+    var val_up_surname =  $('#update_surname_prepod').val();
+    var val_up_name =  $('#update_name_prepod').val();
+    var val_up_patronymic =  $('#update_patronymic_prepod').val();
+    var val_up_predmet =  $('#update_predmet_prepod').val();
+    var val_select_up_prepod = $('#select_prepod').val();
+
+    $.ajax({
+        url: 'script_admin2.php',
+        method: 'post',
+        dataType: 'html',
+        data: {login: val_login, pass: val_pass, surname: val_surname, name: val_name, patronymic: val_patronymic, predmet: val_predmet},
+        success: function(data){
+            $( ".select_prepod").append( " <div class=select_prepod_glaw><div class=mini_prepod><img src=../../res/prepod_ikon.svg><h4>Логин: <text>" + val_login + "</text>;  Пароль: <text>"+val_pass+"</text>;</h4></div>" +
+                "<div class='mini_info'><h4>"+val_surname+" "+val_name+" "+val_patronymic+";Предмет: <text>"+val_predmet+"</text>;</h4></div></div>" );
+            $( ".ewrewrwere" ).append("<option value='"+val_id_prepod+"'>"+val_login+"</option>");
+        }
+    });
 });
