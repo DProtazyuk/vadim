@@ -11,5 +11,9 @@ $post_prepmet = $_POST['prepmet'];
 
 $pass_prepod =  password_hash($post_pass, PASSWORD_DEFAULT);
 
-$stmt = $dbh->prepare('INSERT INTO `users` (`id`, `login`, `pass`, `pass_int`, `surname`, `name`, `patronymic`, `role`, `predmet`) VALUES (NULL, :login, :prepod_pass, :pass_z, "Иванов", "Иван", "Иванович", "prepod", "mat")');
-$stmt->execute(array('login' => $post_login, 'prepod_pass' => $pass_prepod, 'pass_z' => $post_pass));
+$sql = "SELECT * FROM users WHERE role = 'prepod'";
+$res = $dbh->query($sql);
+$count = $res->rowCount();
+
+$stmt = $dbh->prepare('INSERT INTO `users` (`id`, `login`, `pass`, `pass_int`, `surname`, `name`, `patronymic`, `role`, `predmet`) VALUES (NULL, :login, :prepod_pass, :pass_z, :surname, :ima, :patronymic, "prepod", :predmet)');
+$stmt->execute(array('login' => $post_login, 'prepod_pass' => $pass_prepod, 'pass_z' => $post_pass, 'surname' => $post_surname, 'ima' => $post_name, 'patronymic' => $post_patronymic, 'predmet' => $post_prepmet));

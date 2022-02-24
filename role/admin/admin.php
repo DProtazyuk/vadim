@@ -7,6 +7,10 @@
     $login1 = $_COOKIE['admin_login'];
     $login2 = $_COOKIE['prepod_login'];
     include ("../../script/connect.php");
+
+    $sql = "SELECT * FROM users WHERE role = 'prepod'";
+    $res = $dbh->query($sql);
+    $count = $res->rowCount();
 ?>
 
 
@@ -43,21 +47,22 @@
                     <input id="insert_name_prepod" type="text" placeholder="Введите Имя" class="form-control input_prepod">
                     <input id="insert_patronymic_prepod" type="text" placeholder="Введите Отчество" class="form-control input_prepod">
                     <input id="insert_predmet_prepod" type="text" placeholder="Введте Предмет" class="form-control input_prepod">
+                    <input type="hidden" value="<?php echo $count+2;?>" id="id_last_prepod">
 
                     <button class="insert_prepod">Создать</button>
                 </div>
                 <br><br>
                 <div style="height: 450px" class="new_prepod update_prepod">
                     <h1 style="color: #01556a">UPDATE Prepod</h1>
-                    <select style="height: 35px" class="form-control input_prepod" name="" id="select_prepod">
+                    <select style="height: 35px" class="form-control input_prepod ewrewrwere" name="" id="select_prepod">
                         <option value="">Select Prepod</option>
 
                         <?php
 
                         foreach ($dbh->query("SELECT * FROM users WHERE role = 'prepod'") as $row) {
-                            echo "<option value={$row['id']}>{$row['login']}</option>";
+                            $row_id = $row['id'];
+                            echo "<option value={$row_id}>{$row['login']}</option>";
                         }
-
                         ?>
                     </select>
                     <input id="update_login_prepod" type="text" placeholder="Введите login" class=" form-control input_prepod">
@@ -66,7 +71,7 @@
                     <input id="update_name_prepod" type="text" placeholder="Введите Имя" class="form-control input_prepod">
                     <input id="update_patronymic_prepod" type="text" placeholder="Введите Отчество" class="form-control input_prepod">
                     <input id="update_predmet_prepod" type="text" placeholder="Введте Предмет" class="form-control input_prepod">
-
+                    <input type="hidden" value="" id="id_last_prepod">
                     <button  type="submit" class="update_prepod_but">Изменить</button>
                 </div>
             </div>
@@ -75,12 +80,14 @@
 
                 <?php
                 foreach ($dbh->query("SELECT * FROM users WHERE role = 'prepod'") as $row) {
-                    echo "  <div class=select_prepod_glaw><div class='select_vstav'><div class=mini_prepod>
+                    echo "  <div class=select_prepod_glaw>
+                            <div class=mini_prepod>
                     <img src=../../res/prepod_ikon.svg> <h4>Логин: <text>{$row[login]}</text>;  Пароль: <text>{$row[pass_int]}</text>;</h4>
                 </div>
                 <div class='mini_info'>
                     <h4>{$row[surname]} {$row[name]} {$row[patronymic]}; Предмет: <text>{$row[predmet]}</text>;</h4>
-                </div></div></div>
+                </div>
+                </div>
                 ";
                 }
 
@@ -90,6 +97,7 @@
         </div>
     </div>
 </div>
+
 
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <script src="../../script-js/admin.js"></script>
