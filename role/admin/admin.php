@@ -4,9 +4,11 @@
         header("location: ../../index.php");
     }
 
+    require_once('../../script/function.php');
+    $dbh = connect();
+
     $login1 = $_COOKIE['admin_login'];
     $login2 = $_COOKIE['prepod_login'];
-    include ("../../script/connect.php");
 
     $sql = "SELECT * FROM users WHERE role = 'prepod'";
     $res = $dbh->query($sql);

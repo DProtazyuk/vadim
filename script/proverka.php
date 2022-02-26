@@ -1,6 +1,8 @@
 <?php
 
-    include ('connect.php');
+    require_once('function.php');
+    $dbh = connect();
+
 
 unset($_COOKIE['admin_pass']);
 setcookie('admin_pass', null, -1, '/');
@@ -12,8 +14,8 @@ setcookie('prepod_pass', null, -1, '/');
 unset($_COOKIE['prepod_login']);
 setcookie('prepod_login', null, -1, '/');
 
-    $login = $_POST['input_login'];
-    $pass = $_POST['input_pass'];
+$login = $_POST['input_login'];
+$pass = $_POST['input_pass'];
 
 $stmt = $dbh->prepare("SELECT * FROM users where login = ?");
 $stmt->execute([ $login]);

@@ -8,6 +8,7 @@
         <input name="post_login" type="text">
         <h6>Пароль:</h6>
         <input name="post_pass" type="text">
+        <input name="val_form" type="hidden" value="1">
 
         <button type="submit" class="btn btn-light">Запустить</button>
     </form>

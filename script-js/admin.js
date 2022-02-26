@@ -12,8 +12,9 @@ $('.insert_prepod').on('click', function() {
         url: 'script_admin.php',
         method: 'post',
         dataType: 'html',
-        data: {login: val_login, pass: val_pass, surname: val_surname, name: val_name, patronymic: val_patronymic, predmet: val_predmet},
+        data: {action:'insert_prepod', login: val_login, pass: val_pass, surname: val_surname, name: val_name, patronymic: val_patronymic, predmet: val_predmet},
         success: function(data){
+            
             $( ".select_prepod").append( " <div class=select_prepod_glaw><div class=mini_prepod><img src=../../res/prepod_ikon.svg><h4>Логин: <text>" + val_login + "</text>;  Пароль: <text>"+val_pass+"</text>;</h4></div>" +
                 "<div class='mini_info'><h4>"+val_surname+" "+val_name+" "+val_patronymic+";Предмет: <text>"+val_predmet+"</text>;</h4></div></div>" );
             $( ".ewrewrwere" ).append("<option value='"+val_id_prepod+"'>"+val_login+"</option>");
@@ -25,10 +26,10 @@ $('#select_prepod').on('change', function() {
     var id_prepod =  $('#select_prepod').val();
 
     $.ajax({
-        url: 'select.php',
+        url: 'script_admin.php',
         method: 'post',
         ddataType: 'html',
-        data: {id_prepod: id_prepod},
+        data: {action:'select_prepod', id_prepod: id_prepod},
         success: function(data){
 
             var wer = JSON.parse(data);
