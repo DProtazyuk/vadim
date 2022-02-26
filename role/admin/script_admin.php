@@ -9,6 +9,7 @@ $post_name = $_POST['name'];
 $post_patronymic = $_POST['patronymic'];
 $post_predmet = $_POST['predmet'];
 
+
 $pass_prepod =  password_hash($post_pass, PASSWORD_DEFAULT);
 
 $sql = "SELECT * FROM users WHERE role = 'prepod'";

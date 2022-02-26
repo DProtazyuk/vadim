@@ -70,11 +70,9 @@ $('.update_prepod_but').on('click', function() {
         url: 'script_admin2.php',
         method: 'post',
         dataType: 'html',
-        data: {login: val_login, pass: val_pass, surname: val_surname, name: val_name, patronymic: val_patronymic, predmet: val_predmet},
+        data: {id_up: val_select_up_prepod,login: val_up_login, pass: val_up_pass, surname: val_up_surname, name: val_up_name, patronymic: val_up_patronymic, predmet: val_up_predmet},
         success: function(data){
-            $( ".select_prepod").append( " <div class=select_prepod_glaw><div class=mini_prepod><img src=../../res/prepod_ikon.svg><h4>Логин: <text>" + val_login + "</text>;  Пароль: <text>"+val_pass+"</text>;</h4></div>" +
-                "<div class='mini_info'><h4>"+val_surname+" "+val_name+" "+val_patronymic+";Предмет: <text>"+val_predmet+"</text>;</h4></div></div>" );
-            $( ".ewrewrwere" ).append("<option value='"+val_id_prepod+"'>"+val_login+"</option>");
+
         }
     });
 });
