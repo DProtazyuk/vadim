@@ -25,6 +25,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">    <link rel="stylesheet" href="/style/index.css">
     <link rel="stylesheet" href="../../style/admin.css">
+    <link rel="stylesheet" href="../../style/admin_cross.css">
     <title>Document</title>
 </head>
 <body>
@@ -32,16 +33,14 @@
 <div class="div_glaw_admin">
     <div class="div_min_admin">
         <div class="header_admin">
-            <div class="mini_logo">
                 <h3>Login in:<text> <?php echo $login1.$login2;?></text></h3>
-            </div>
         </div>
 
         <div class="action_prepod">
 
             <div class="to_bd_prepod">
                 <div class="new_prepod">
-                    <h1 style="color: #01556a">INSERT Prepod</h1>
+                    <h1 style="color: #58026D; fon-weight:600;">INSERT Prepod</h1>
 
                     <input id="insert_login_prepod" type="text" placeholder="Введите login" class=" form-control input_prepod">
                     <input id="insert_pass_prepod" type="text" placeholder="Введите password" class="form-control input_prepod">
@@ -55,7 +54,7 @@
                 </div>
                 <br><br>
                 <div style="height: 450px" class="new_prepod update_prepod">
-                    <h1 style="color: #01556a">UPDATE Prepod</h1>
+                    <h1 style="color: white; fon-weight:600;">UPDATE Prepod</h1>
                     <select style="height: 35px" class="form-control input_prepod ewrewrwere" name="" id="select_prepod">
                         <option value="">Select Prepod</option>
 

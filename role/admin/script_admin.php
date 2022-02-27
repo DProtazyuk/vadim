@@ -14,6 +14,7 @@ else {
     echo "aaaaaa";
 }
 
+
 //Добавление преподвателя
 function insert_prepod($dbh) {
     $post_login = $_POST['login'];
@@ -29,6 +30,7 @@ function insert_prepod($dbh) {
     $stmt->execute(array('login' => $post_login, 'prepod_pass' => $pass_prepod, 'pass_z' => $post_pass, 'surname' => $post_surname, 'ima' => $post_name, 'patronymic' => $post_patronymic, 'predmet' => $post_predmet));
 }
 
+
 //Select Преподователей
 function select_prepod($dbh) { 
     $post_id = $_POST['id_prepod'];
@@ -37,3 +39,5 @@ function select_prepod($dbh) {
      echo json_encode(array($row));
     }
 }
+
+

@@ -8,18 +8,24 @@ $('.insert_prepod').on('click', function() {
     var val_predmet =  $('#insert_predmet_prepod').val();
     var val_id_prepod = $('#id_last_prepod').val();
 
-    $.ajax({
-        url: 'script_admin.php',
-        method: 'post',
-        dataType: 'html',
-        data: {action:'insert_prepod', login: val_login, pass: val_pass, surname: val_surname, name: val_name, patronymic: val_patronymic, predmet: val_predmet},
-        success: function(data){
-            
-            $( ".select_prepod").append( " <div class=select_prepod_glaw><div class=mini_prepod><img src=../../res/prepod_ikon.svg><h4>Логин: <text>" + val_login + "</text>;  Пароль: <text>"+val_pass+"</text>;</h4></div>" +
-                "<div class='mini_info'><h4>"+val_surname+" "+val_name+" "+val_patronymic+";Предмет: <text>"+val_predmet+"</text>;</h4></div></div>" );
-            $( ".ewrewrwere" ).append("<option value='"+val_id_prepod+"'>"+val_login+"</option>");
-        }
-    });
+  
+    if((val_login.length >= 4) && (val_pass.length >= 4) && (val_surname.length >= 4) && (val_name.length >= 4) && (val_patronymic.length >= 4) && (val_predmet.length >= 4)){
+        $.ajax({
+            url: 'script_admin.php',
+            method: 'post',
+            dataType: 'html',
+            data: {action:'insert_prepod', login: val_login, pass: val_pass, surname: val_surname, name: val_name, patronymic: val_patronymic, predmet: val_predmet},
+            success: function(data){
+                
+                $( ".select_prepod").append( " <div class=select_prepod_glaw><div class=mini_prepod><img src=../../res/prepod_ikon.svg><h4>Логин: <text>" + val_login + "</text>;  Пароль: <text>"+val_pass+"</text>;</h4></div>" +
+                    "<div class='mini_info'><h4>"+val_surname+" "+val_name+" "+val_patronymic+";Предмет: <text>"+val_predmet+"</text>;</h4></div></div>" );
+                $( ".ewrewrwere" ).append("<option value='"+val_id_prepod+"'>"+val_login+"</option>");
+            }
+        });
+    }
+    else {
+        alert("Проверьте поля! Минимальное значение равно четырем!");
+    }
 });
 
 $('#select_prepod').on('change', function() {
@@ -51,8 +57,6 @@ $('#select_prepod').on('change', function() {
 
             document.getElementById("update_predmet_prepod").value = "";
             document.getElementById('update_predmet_prepod').value = wer[0][7];
-
-            console.log(wer);
         }
     });
 });
